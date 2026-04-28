@@ -78,7 +78,7 @@ export default function ServicesSectionClient({
   const resolvedActiveIndex = Math.min(hoveredIndex ?? activeIndex, maxIndex);
 
   return (
-    <section className="relative w-full overflow-hidden bg-transparent py-20">
+    <section className="relative w-full overflow-hidden bg-transparent pb-16 pt-16 md:pb-18 md:pt-18 lg:pb-20 lg:pt-20">
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h2

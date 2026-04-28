@@ -2,9 +2,11 @@ import Navbar from "@/components/layout/Navbar";
 import SharedBackgroundSection from "@/components/layout/SharedBackgroundSection";
 import Hero from "@/components/sections/hero/Hero";
 import EngineeringPhilosophy from "@/components/sections/philosophy/EngineeringPhilosophy";
+import WorldwideOperations from "@/components/sections/operations/WorldwideOperations";
 import WhatWeDo from "@/components/sections/intro/Intro";
 import SectorsSection from "@/components/sections/sector/SectorsSection";
 import ServicesSection from "@/components/sections/service/Service";
+import ReadyToMove from "@/components/sections/cta/ReadyToMove";
 
 
 export default function HomePage() {
@@ -25,6 +27,8 @@ export default function HomePage() {
         </div>
       </SharedBackgroundSection>
       <EngineeringPhilosophy backgroundSrc="/Engineering_Philosophy_bg.jpg" />
+      <WorldwideOperations mapImageSrc="/operations-map-bg.jpg" />
+      <ReadyToMove backgroundSrc="/cta-grid-bg.png" />
     </>
   );
 }

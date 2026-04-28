@@ -7,6 +7,7 @@ import WhatWeDo from "@/components/sections/intro/Intro";
 import SectorsSection from "@/components/sections/sector/SectorsSection";
 import ServicesSection from "@/components/sections/service/Service";
 import ReadyToMove from "@/components/sections/cta/ReadyToMove";
+import Footer from "@/components/layout/Footer";
 
 
 export default function HomePage() {
@@ -29,6 +30,7 @@ export default function HomePage() {
       <EngineeringPhilosophy backgroundSrc="/Engineering_Philosophy_bg.jpg" />
       <WorldwideOperations mapImageSrc="/operations-map-bg.jpg" />
       <ReadyToMove backgroundSrc="/cta-grid-bg.png" />
+      <Footer backgroundSrc="/footer-bg.jpg"/>
     </>
   );
 }

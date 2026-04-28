@@ -25,7 +25,7 @@ export default function WorldwideOperations({
   const resolvedMapImageSrc = mapImageSrc ?? '/operations-map-bg.jpg';
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#010504] px-6 py-14 sm:px-8 md:py-16 lg:px-14 xl:px-[64px] xl:py-[72px]">
+    <section className="relative isolate overflow-hidden bg-[#010504] px-6 pt-14 sm:px-8 md:py-16 lg:px-14 xl:px-[64px] xl:py-[72px]">
       <div
         className="pointer-events-none absolute inset-0"
         style={{

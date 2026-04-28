@@ -10,7 +10,8 @@ const HERO_DATA = {
 export default function HeroContent() {
   return (
     <div className="mx-auto w-full max-w-[1680px] px-[clamp(20px,3.5vw,65px)] pt-[clamp(20px,3vw,36px)] pb-[clamp(32px,5vw,88px)]">
-      <div className="flex max-w-[920px] flex-col gap-[26px]">
+      <div className="flex max-w-[920px] flex-col">
+
         <h1 className="m-0 font-[Eloran,serif] font-normal uppercase">
           <span className="block bg-[linear-gradient(180deg,_#ffffff_0%,_rgba(255,255,255,0.86)_100%)] bg-clip-text text-[clamp(34px,4.4vw,68px)] leading-[1.04] text-transparent [-webkit-text-fill-color:transparent]">
             {HERO_DATA.whiteText}
@@ -20,11 +21,15 @@ export default function HeroContent() {
           </span>
         </h1>
 
-        <p className="m-0 max-w-[720px] [font-family:var(--font-nunito-sans)] text-[clamp(15px,1.12vw,17px)] font-normal leading-[1.5] text-[#9ca3af]">
+        <p className="mt-6 m-0 max-w-[720px] [font-family:var(--font-nunito-sans)] text-[clamp(15px,1.12vw,17px)] font-normal leading-[1.5] text-[#9ca3af]">
           {HERO_DATA.description}
         </p>
 
-        <HeroButtons />
+        
+        <div className="mt-10">
+          <HeroButtons />
+        </div>
+
       </div>
     </div>
   );

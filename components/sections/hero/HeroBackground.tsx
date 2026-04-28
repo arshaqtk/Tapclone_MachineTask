@@ -3,9 +3,9 @@ export default function HeroBackground() {
     <>
       <div className="absolute inset-0 h-full w-full bg-[url('/hero-bg.png')] bg-cover bg-center bg-no-repeat" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,_#04090D_0%,_rgba(4,9,13,0.97)_18%,_rgba(4,9,13,0.88)_38%,_rgba(4,9,13,0.56)_60%,_rgba(4,9,13,0.14)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,_#04090D_0%,_#04090D_35%,_rgba(4,9,13,0.92)_50%,_rgba(4,9,13,0.55)_68%,_rgba(4,9,13,0.1)_100%)]" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(4,9,13,0.1)_0%,_rgba(4,9,13,0.18)_58%,_rgba(4,9,13,0.78)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(4,9,13,0.15)_0%,_rgba(4,9,13,0.1)_50%,_rgba(4,9,13,0.8)_100%)]" />
 
       <div className="absolute bottom-0 left-0 h-[250px] w-full bg-[linear-gradient(180deg,_transparent_0%,_#080D11_100%)]" />
 

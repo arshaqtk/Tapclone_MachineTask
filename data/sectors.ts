@@ -14,7 +14,6 @@ export const SECTORS_DATA: Sector[] = [
     title: 'Real Estate & Infrastructure',
     description:
       'Smart building systems and intelligent infrastructure management.',
-    accent: true,
   },
   {
     id: 'industrial-manufacturing',

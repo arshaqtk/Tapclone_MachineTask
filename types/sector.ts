@@ -3,5 +3,4 @@ export interface Sector {
   number: string;
   title: string;
   description: string;
-  accent?: boolean;
 }

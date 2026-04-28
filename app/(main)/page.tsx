@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import SharedBackgroundSection from "@/components/layout/SharedBackgroundSection";
 import Hero from "@/components/sections/hero/Hero";
+import EngineeringPhilosophy from "@/components/sections/philosophy/EngineeringPhilosophy";
 import WhatWeDo from "@/components/sections/intro/Intro";
 import SectorsSection from "@/components/sections/sector/SectorsSection";
 import ServicesSection from "@/components/sections/service/Service";
@@ -23,6 +24,7 @@ export default function HomePage() {
           <SectorsSection />
         </div>
       </SharedBackgroundSection>
+      <EngineeringPhilosophy backgroundSrc="/Engineering_Philosophy_bg.jpg" />
     </>
   );
 }

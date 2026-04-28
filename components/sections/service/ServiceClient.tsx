@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 import ServiceCard from '@/components/ui/ServiceCard';
 import { ServiceCardSkeleton } from '@/components/ui/serviceCardSkelton';
@@ -14,68 +14,9 @@ export default function ServicesSectionClient({
   isLoading = false,
   emptyMessage = 'Services will appear here soon.',
 }: ServicesSectionProps) {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    if (isLoading || services.length === 0) {
-      return;
-    }
-
-    const container = scrollRef.current;
-
-    if (!container) {
-      return;
-    }
-
-    let frameId = 0;
-
-    const updateActiveCard = () => {
-      cancelAnimationFrame(frameId);
-      frameId = requestAnimationFrame(() => {
-        const containerRect = container.getBoundingClientRect();
-        const containerCenter = containerRect.left + containerRect.width / 2;
-
-        let closestIndex = 0;
-        let closestDistance = Number.POSITIVE_INFINITY;
-
-        itemRefs.current.forEach((item, index) => {
-          if (!item) {
-            return;
-          }
-
-          const itemRect = item.getBoundingClientRect();
-          const itemCenter = itemRect.left + itemRect.width / 2;
-          const distance = Math.abs(itemCenter - containerCenter);
-
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            closestIndex = index;
-          }
-        });
-
-        setActiveIndex((currentIndex) =>
-          currentIndex === closestIndex ? currentIndex : closestIndex
-        );
-      });
-    };
-
-    updateActiveCard();
-    container.addEventListener('scroll', updateActiveCard, { passive: true });
-    window.addEventListener('resize', updateActiveCard);
-
-    return () => {
-      container.removeEventListener('scroll', updateActiveCard);
-      window.removeEventListener('resize', updateActiveCard);
-      cancelAnimationFrame(frameId);
-    };
-  }, [isLoading, services]);
-
   const visibleServices = isLoading ? [] : services;
-  const maxIndex = Math.max(visibleServices.length - 1, 0);
-  const resolvedActiveIndex = Math.min(hoveredIndex ?? activeIndex, maxIndex);
 
   return (
     <section className="relative w-full overflow-hidden bg-transparent pb-16 pt-16 md:pb-18 md:pt-18 lg:pb-20 lg:pt-20">
@@ -119,15 +60,11 @@ export default function ServicesSectionClient({
         ) : visibleServices.length > 0 ? (
           <>
             <div
-              ref={scrollRef}
               className="grid grid-cols-1 gap-[22px] pb-4 sm:grid-flow-col sm:auto-cols-[330px] sm:grid-cols-none sm:overflow-x-auto sm:[scrollbar-color:#2e5e3e_transparent] sm:[scrollbar-width:thin]"
             >
               {visibleServices.map((service: Service, index: number) => (
                 <div
                   key={service.id}
-                  ref={(element) => {
-                    itemRefs.current[index] = element;
-                  }}
                   className="flex h-full justify-center snap-start sm:block"
                   onMouseEnter={() => {
                     setHoveredIndex(index);
@@ -142,7 +79,7 @@ export default function ServicesSectionClient({
                     setHoveredIndex(null);
                   }}
                 >
-                  <ServiceCard service={service} isActive={index === resolvedActiveIndex} />
+                  <ServiceCard service={service} isActive={index === hoveredIndex} />
                 </div>
               ))}
             </div>
@@ -164,7 +101,7 @@ export default function ServicesSectionClient({
                   <span
                     key={service.id}
                     className={`h-2 rounded-full transition-all duration-300 ${
-                      index === resolvedActiveIndex ? 'w-8 bg-[#4a9960]' : 'w-2 bg-[#244132]'
+                      index === hoveredIndex ? 'w-8 bg-[#4a9960]' : 'w-2 bg-[#244132]'
                     }`}
                   />
                 ))}

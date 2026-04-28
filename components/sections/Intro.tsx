@@ -12,22 +12,7 @@ export default function WhatWeDo({
   description = "ABC Technologies LLC operates as a single-window partner for global clients seeking reliable sourcing, technical expertise, and deployment of advanced engineering and technology solutions.",
 }: WhatWeDoProps) {
   return (
-    <section
-      className="relative w-full overflow-hidden px-20 py-[72px]"
-      style={{
-        background:
-          "radial-gradient(ellipse 60% 80% at 0% 0%, #0d2a1e 0%, #091a12 40%, #050f0b 100%)",
-      }}
-    >
-      {/* Overlay gradient */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 50% 100% at 100% 50%, rgba(0,0,0,0.35) 0%, transparent 70%)",
-        }}
-      />
-
+    <section className="relative w-full overflow-hidden bg-transparent px-20 py-[72px]">
       <div className="relative z-10 flex max-w-[820px] flex-col gap-5">
         {/* Eyebrow tag */}
         <div className="inline-flex self-start">

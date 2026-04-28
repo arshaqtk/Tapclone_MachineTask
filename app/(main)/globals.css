@@ -5,19 +5,11 @@
   --foreground: #f3f4f6;
 }
 
-@font-face {
-  font-family: "Eloran";
-  src: url("/fonts/Eloran/Eloran-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-nunito-sans);
+  --font-display: var(--font-eloran);
 }
 
 html {
@@ -31,6 +23,6 @@ body {
     radial-gradient(circle at top right, rgba(45, 82, 55, 0.18) 0%, rgba(5, 8, 11, 0) 32%),
     linear-gradient(180deg, #06090c 0%, #05080b 52%, #04070a 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   min-height: 100vh;
 }

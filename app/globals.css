@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #05080b;
+  --foreground: #f3f4f6;
+}
+
+@font-face {
+  font-family: "Eloran";
+  src: url("/fonts/Eloran/Eloran-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @theme inline {
@@ -12,15 +20,17 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background:
+    radial-gradient(circle at top right, rgba(45, 82, 55, 0.18) 0%, rgba(5, 8, 11, 0) 32%),
+    linear-gradient(180deg, #06090c 0%, #05080b 52%, #04070a 100%);
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top right, rgba(45, 82, 55, 0.18) 0%, rgba(5, 8, 11, 0) 32%),
+    linear-gradient(180deg, #06090c 0%, #05080b 52%, #04070a 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
 }

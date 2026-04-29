@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 
     const { title, description, href } = await req.json();
     
-    if (!title || !description || !href) {
+    if (!title || !description) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
@@ -62,6 +62,39 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ message: 'Service deleted successfully' });
   } catch (error) {
     return NextResponse.json({ error: 'Failed to delete service' }, { status: 500 });
+  }
+}
+
+export async function PATCH(req: NextRequest) {
+  try {
+    const token = req.cookies.get('token')?.value;
+
+    if (!token || !(await verifyToken(token))) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    const { id, title, description, href } = await req.json();
+
+    if (!id) {
+      return NextResponse.json({ error: 'Missing service ID' }, { status: 400 });
+    }
+
+    await connectDB();
+    const updatedService = await Service.findByIdAndUpdate(
+      id,
+      { title, description, href },
+      { new: true }
+    );
+
+    if (!updatedService) {
+      return NextResponse.json({ error: 'Service not found' }, { status: 404 });
+    }
+
+    (revalidateTag as any)('services');
+
+    return NextResponse.json(updatedService);
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed to update service' }, { status: 500 });
   }
 }
 

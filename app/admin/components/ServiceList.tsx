@@ -1,20 +1,22 @@
 'use client';
 
-import { HiTrash } from 'react-icons/hi';
+import { HiTrash, HiPencil } from 'react-icons/hi';
 
 interface Service {
   _id: string;
   title: string;
   description: string;
+  href: string;
 }
 
 interface ServiceListProps {
   services: Service[];
   fetching: boolean;
   onDelete: (id: string) => void;
+  onEdit: (service: Service) => void;
 }
 
-export default function ServiceList({ services, fetching, onDelete }: ServiceListProps) {
+export default function ServiceList({ services, fetching, onDelete, onEdit }: ServiceListProps) {
   return (
     <div>
       <h2 className="text-[18px] font-bold mb-8">Published Services</h2>
@@ -30,12 +32,22 @@ export default function ServiceList({ services, fetching, onDelete }: ServiceLis
                 <h3 className="text-[16px] font-bold text-white mb-2">{service.title}</h3>
                 <p className="text-[13px] text-[#9ca3af] line-clamp-2">{service.description}</p>
               </div>
-              <button 
-                onClick={() => onDelete(service._id)}
-                className="p-2 text-red-500/40 hover:text-red-500 transition-colors"
-              >
-                <HiTrash size={18} />
-              </button>
+              <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button 
+                  onClick={() => onEdit(service)}
+                  className="p-2 text-[#00b050]/60 hover:text-[#00b050] transition-colors bg-white/5 rounded-lg"
+                  title="Edit Service"
+                >
+                  <HiPencil size={18} />
+                </button>
+                <button 
+                  onClick={() => onDelete(service._id)}
+                  className="p-2 text-red-500/60 hover:text-red-500 transition-colors bg-white/5 rounded-lg"
+                  title="Delete Service"
+                >
+                  <HiTrash size={18} />
+                </button>
+              </div>
             </div>
           ))
         )}

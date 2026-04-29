@@ -69,9 +69,10 @@ export default function Navbar() {
           {/* ── Desktop CTA ── */}
           <Link
             href="#contact"
-            className="hidden h-12 w-[188px] shrink-0 items-center justify-center rounded-[6px] border border-[rgba(112,162,103,0.7)] shadow-[0_0_12px_rgba(112,162,103,0.12)] [font-family:var(--font-nunito-sans)] text-[14px] font-medium uppercase leading-none whitespace-nowrap text-white transition-all duration-300 hover:bg-[#447544]/10 md:flex"
+            className="group relative hidden h-12 w-[188px] shrink-0 items-center justify-center overflow-hidden rounded-[8px] border border-[#70A267]/60 text-[14px] font-bold uppercase tracking-[1px] text-white transition-all duration-300 md:flex"
           >
-            Contact Us
+            <span className="relative z-10">Contact Us</span>
+            <div className="absolute inset-0 z-0 border border-white/20 bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-[16px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" />
           </Link>
 
           {/* ── Mobile hamburger ── */}

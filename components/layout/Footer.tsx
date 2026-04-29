@@ -151,14 +151,11 @@ export default function Footer({ backgroundSrc }: FooterProps) {
         {/* Bottom Section: Divider & Copyright */}
         <div className="mt-16 sm:mt-20">
           <hr className="border-white/5" />
-          <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4">
             <p className="text-[12px] text-[#9ca3af]/60 font-medium" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
               © 2026 Tapclone | All Rights Reserved
             </p>
-            <div className="flex gap-6">
-               <Link href="#" className="text-[11px] uppercase tracking-widest text-[#9ca3af]/40 hover:text-[#00b050] transition-colors">Privacy Policy</Link>
-               <Link href="#" className="text-[11px] uppercase tracking-widest text-[#9ca3af]/40 hover:text-[#00b050] transition-colors">Terms of Service</Link>
-            </div>
+             
           </div>
         </div>
 

@@ -27,7 +27,7 @@ export default function LoginPage() {
       const data = await res.json();
 
       if (res.ok) {
-        router.push('/admin');
+        window.location.replace('/admin');
       } else {
         setError(data.message || 'Invalid email or password');
       }

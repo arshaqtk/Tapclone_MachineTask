@@ -10,6 +10,9 @@ import ReadyToMove from "@/components/sections/cta/ReadyToMove";
 import Footer from "@/components/layout/Footer";
 
 
+import { Suspense } from "react";
+import { ServiceCardSkeleton } from "@/components/ui/serviceCardSkelton";
+
 export default function HomePage() {
   return (
     <>
@@ -23,7 +26,13 @@ export default function HomePage() {
           />
       <SharedBackgroundSection imageSrc="/shared-sections-bg.png">
         <div className="relative z-10">
-          <ServicesSection/>
+          <Suspense fallback={
+            <div className="grid grid-cols-1 gap-[22px] pb-4 sm:grid-flow-col sm:auto-cols-[330px] sm:grid-cols-none sm:overflow-x-auto">
+              {[1, 2, 3, 4].map(i => <ServiceCardSkeleton key={i} />)}
+            </div>
+          }>
+            <ServicesSection/>
+          </Suspense>
           <SectorsSection />
         </div>
       </SharedBackgroundSection>

@@ -7,17 +7,23 @@ export default function HeroButtons() {
     <div className="flex flex-wrap items-center gap-[20px]">
       <Link
         href="#contact"
-        className="inline-flex h-[52px] min-w-[218px] items-center justify-center gap-1 whitespace-nowrap rounded-[8px] bg-[linear-gradient(180deg,_#447444_0%,_#128954_100%)] px-6 [box-shadow:inset_0_-1px_0_rgba(255,255,255,0.24)] [font-family:var(--font-nunito-sans)] text-[14px] font-semibold uppercase tracking-[0.7px] text-white no-underline transition-opacity duration-200 hover:opacity-85"
+        className="group relative inline-flex h-[56px] min-w-[240px] items-center justify-center overflow-hidden rounded-[12px] bg-gradient-to-b from-[#4A7D4A] to-[#128954] px-8 text-[14px] font-bold uppercase tracking-[1px] text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] transition-all duration-300 hover:translate-y-[-2px]"
       >
-        Discuss a Project
+        <span className="relative z-10">Discuss a Project</span>
+        <div className="absolute inset-0 z-0 border border-white/10 bg-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-[12px]" />
       </Link>
 
       <Link
         href="#services"
-        className="inline-flex h-[52px] w-full max-w-[398px] items-center justify-center gap-4 whitespace-nowrap rounded-[8px] border border-[rgba(112,162,103,0.65)] px-[26px] [font-family:var(--font-nunito-sans)] text-[14px] font-medium uppercase tracking-[0.8px] text-white no-underline transition-[background,border-color] duration-200 hover:bg-[#447544]/10"
+        className="group relative inline-flex h-[56px] min-w-[240px] lg:min-w-[320px] items-center justify-center gap-4 overflow-hidden rounded-[12px] border border-[#70A267]/60 px-8 text-[14px] font-bold uppercase tracking-[1px] text-white transition-all duration-300 hover:translate-y-[-2px]"
       >
-        Explore Our Capabilities
-        <span className="text-[18px] leading-none">{"\u2197"}</span>
+        <span className="relative z-10 flex items-center gap-4">
+          Explore Our Capabilities
+          <span className="text-[20px] transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-[-1px]">
+            ↗
+          </span>
+        </span>
+        <div className="absolute inset-0 z-0 border border-white/20 bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-[16px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" />
       </Link>
     </div>
   );

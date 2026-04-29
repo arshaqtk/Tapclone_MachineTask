@@ -66,6 +66,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/ABC_Technologies.logo.png",
+    shortcut: "/ABC_Technologies.logo.png",
+    apple: "/ABC_Technologies.logo.png",
+  },
 };
 
 export default function RootLayout({

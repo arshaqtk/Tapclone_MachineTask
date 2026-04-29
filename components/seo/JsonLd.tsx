@@ -6,7 +6,7 @@ export default function JsonLd() {
     "@type": "Organization",
     "name": "ABC Technologies LLC",
     "url": "https://abctechnologies.com",
-    "logo": "https://abctechnologies.com/logo.png",
+    "logo": "https://abctechnologies.com/ABC_Technologies.logo.png",
     "description": "Global partner for reliable sourcing, technical expertise, and deployment of advanced engineering and technology solutions.",
     "address": {
       "@type": "PostalAddress",

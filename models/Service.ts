@@ -11,7 +11,7 @@ const ServiceSchema = new Schema({
   },
   href: {
     type: String,
-    required: true,
+    required: false,
   }
 }, { timestamps: true, versionKey: false });
 

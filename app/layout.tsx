@@ -28,6 +28,7 @@ const eloran = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://abctechnologies.vercel.app"),
   title: {
     default: "ABC Technologies LLC | Global Engineering & Technology Solutions",
     template: "%s | ABC Technologies LLC"
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ABC Technologies LLC | Global Engineering & Technology Solutions",
     description: "Your single-window partner for reliable sourcing and deployment of advanced engineering solutions worldwide.",
-    url: "https://abctechnologies.com",
+    url: "https://abctechnologies.vercel.app",
     siteName: "ABC Technologies LLC",
     locale: "en_US",
     type: "website",
@@ -67,9 +68,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/ABC_Technologies.logo.png",
-    shortcut: "/ABC_Technologies.logo.png",
-    apple: "/ABC_Technologies.logo.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 

@@ -1,8 +1,7 @@
 export interface Service {
-  id: string;
+  _id: string;
   title: string;
   description: string;
-  image?: string;
   href?: string;
 }
 
@@ -13,7 +12,6 @@ export interface ServiceCardProps {
 
 export interface ServicesSectionProps {
   services?: Service[];
-  eyebrow?: string;
   heading?: string;
   isLoading?: boolean;
   emptyMessage?: string;

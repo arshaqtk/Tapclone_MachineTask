@@ -64,7 +64,7 @@ export default function ServicesSectionClient({
             >
               {visibleServices.map((service: Service, index: number) => (
                 <div
-                  key={service.id}
+                  key={service._id}
                   className="flex h-full justify-center snap-start sm:block"
                   onMouseEnter={() => {
                     setHoveredIndex(index);
@@ -84,29 +84,31 @@ export default function ServicesSectionClient({
               ))}
             </div>
 
-            <div className="mt-6 hidden items-center justify-between gap-4 sm:flex">
-              <p
-                className="text-[#DAFFF1]/55"
-                style={{
-                  fontFamily: "'Nunito Sans', sans-serif",
-                  fontSize: '14px',
-                  fontWeight: 400,
-                }}
-              >
-                Scroll horizontally to explore services.
-              </p>
+            {visibleServices.length >= 4 && (
+              <div className="mt-6 hidden items-center justify-between gap-4 sm:flex">
+                <p
+                  className="text-[#DAFFF1]/55"
+                  style={{
+                    fontFamily: "'Nunito Sans', sans-serif",
+                    fontSize: '14px',
+                    fontWeight: 400,
+                  }}
+                >
+                  Scroll horizontally to explore services.
+                </p>
 
-              <div className="flex items-center gap-2">
-                {visibleServices.map((service, index) => (
-                  <span
-                    key={service.id}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      index === hoveredIndex ? 'w-8 bg-[#4a9960]' : 'w-2 bg-[#244132]'
-                    }`}
-                  />
-                ))}
+                <div className="flex items-center gap-2">
+                  {visibleServices.map((service, index) => (
+                    <span
+                      key={service._id}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        index === hoveredIndex ? 'w-8 bg-[#4a9960]' : 'w-2 bg-[#244132]'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </>
         ) : (
           <div className="rounded-2xl border border-[#1e3a2a] bg-[#081810] px-6 py-12 text-center">

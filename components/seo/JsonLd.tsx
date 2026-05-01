@@ -5,8 +5,8 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "ABC Technologies LLC",
-    "url": "https://abctechnologies.com",
-    "logo": "https://abctechnologies.com/ABC_Technologies.logo.png",
+    "url": "https://abctechnologies.vercel.app",
+    "logo": "https://abctechnologies.vercel.app/ABC_Technologies.logo.png",
     "description": "Global partner for reliable sourcing, technical expertise, and deployment of advanced engineering and technology solutions.",
     "address": {
       "@type": "PostalAddress",

@@ -4,7 +4,6 @@ import { ServicesSectionProps } from '@/types/service';
 
 export default async function ServicesSection({
   services,
-  heading,
   isLoading = false,
   emptyMessage = 'Services will appear here soon.',
 }: ServicesSectionProps) {
@@ -13,7 +12,6 @@ export default async function ServicesSection({
   return (
     <ServicesSectionClient
       services={resolvedServices}
-      heading={heading}
       isLoading={isLoading}
       emptyMessage={emptyMessage}
     />

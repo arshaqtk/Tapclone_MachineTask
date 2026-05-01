@@ -12,7 +12,6 @@ export interface ServiceCardProps {
 
 export interface ServicesSectionProps {
   services?: Service[];
-  heading?: string;
   isLoading?: boolean;
   emptyMessage?: string;
 }

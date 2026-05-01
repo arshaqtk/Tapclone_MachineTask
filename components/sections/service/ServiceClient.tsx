@@ -10,7 +10,6 @@ const SKELETON_CARDS = 4;
 
 export default function ServicesSectionClient({
   services = [],
-  heading,
   isLoading = false,
   emptyMessage = 'Services will appear here soon.',
 }: ServicesSectionProps) {
@@ -35,18 +34,7 @@ export default function ServicesSectionClient({
             <span style={{ color: '#4a9960' }}>OUR&nbsp;</span>
             <span className="text-white">SERVICES</span>
           </h2>
-          {heading && (
-            <p
-              className="mt-3 text-[#DAFFF1]/60"
-              style={{
-                fontFamily: "'Nunito Sans', sans-serif",
-                fontSize: '16px',
-                fontWeight: 400,
-              }}
-            >
-              {heading}
-            </p>
-          )}
+
         </div>
 
         {isLoading ? (
